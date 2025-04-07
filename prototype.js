@@ -30,6 +30,58 @@
 
 //prototype
 
-let name = 'abhishek   ';
+// let name = 'abhishek   ';
 
-console.log(name.length);
+// console.log(name.trueLength);
+
+let hero = ['king','queen'];
+
+let equipment = {
+    king: 'sword',
+    queen: 'arrow',
+
+    getKingPower : function(){
+        console.log(`king power is ${this.king}`)
+    }
+}
+
+Object.prototype.abhi = function(){
+    console.log('i am present in all objects')
+}
+hero.abhi()
+
+Array.prototype.test = function(){
+    console.log('test');
+}
+hero.test()
+// equipment.test();
+
+
+// inheritence
+const user = {
+    name : 'chai',
+    email: 'someone@gmail.com'
+}
+const teacher = {
+    makeVideo: true
+}
+const teachingSupoort = {
+    isAvailable: true
+}
+const TASupport = {
+    makeAssingments : 'js assignment',
+    fullTime : true,
+    __proto__ : teachingSupoort
+}
+teacher.__proto__ = user;
+
+//modern syntax
+Object.setPrototypeOf(teachingSupoort , teacher);
+
+let anotherUserName = 'abhi       '
+String.prototype.trueLength = function(){
+    console.log(`${this}`)
+    console.log(`the length is : ${this.trim().length}`)
+}
+
+anotherUserName.trueLength()
